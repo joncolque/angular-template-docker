@@ -1,0 +1,14 @@
+version: '3'
+services:
+ angular-template:
+   image: angular-template
+   build:
+    context: ./
+    dockerfile: Dockerfile
+   container_name: angular-template-1
+   ports:
+    - 4200:4200
+   volumes:
+    - ./:/angular-template
+   command: ["/bin/bash","/angular-template/startFrontEnd.sh"]
+   tty: true
